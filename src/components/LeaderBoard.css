@@ -1,0 +1,126 @@
+.tile-row {
+    display: flex;
+  }
+  .tile {
+    border: 1px solid red;
+    display: inline-block;
+    min-width: 35px;
+    min-height: 35px;
+    width: 55px;
+    height: 55px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+  }
+  .dice-system {
+    border: 1px solid green;
+    cursor: pointer;
+    padding: 5px;
+    position: absolute;
+    right: 1px;
+    top: 5px;
+    background-color: rgba(24, 221, 60, 0.8);
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    z-index: 8;
+  }
+  .tile-number {
+    position: relative;
+    top: 7px;
+    z-index: -1;
+  }
+
+
+  
+/* Ladder CSS start Here */
+.ladder-start {
+    background-image: url(./../assets/images/ladder-start.png);
+    background-repeat: no-repeat;
+    z-index: -6;
+    background-size: contain;
+  }
+  .ladder-end {
+    background-image: url(./../assets/images/ladder-end.png);
+    background-repeat: no-repeat;
+    z-index: -6;
+    background-size: contain;
+    background-position-y: 100%;
+  }
+  .ladder-middle {
+    background-image: url(./../assets/images/ladder-middle.png);
+    z-index: -6;
+    background-size: contain;
+  }
+  .ladder-right-angle {
+    background-image: url(./../assets/images/side-angle.png);
+    z-index: -6;
+    background-size: contain;
+    background-position-y: 4px;
+  }
+  .ladder-right-end {
+    background-image: url(./../assets/images/ladder-right-end.png);
+    z-index: -6;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .ladder-left-end {
+    background-image: url(./../assets/images/ladder-left-end.png);
+    z-index: -6;
+    background-size: contain;
+    background-position-y: 0px;
+    background-repeat: no-repeat;
+    background-position-x: 98%;
+  }
+  /* Ladder CSS end  Here */
+  
+  /* Snake CSS start Here */
+  
+  .snake-tail {
+    background-image: url(./../assets/images/snake-tail.png);
+    background-repeat: no-repeat;
+    z-index: -6;
+    background-size: contain;
+  }
+  .snake-middle {
+    background-image: url(./../assets/images/snake-middle.png);
+    z-index: -6;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .snake-left-anlge {
+    background-image: url(./../assets/images/snake-left-angle.png);
+    background-repeat: no-repeat;
+    z-index: -6;
+    background-size: contain;
+    background-position-y: 100%;
+  }
+  
+  .snake-left-end {
+    background-image: url(./../assets/images/snake-left-end.png);
+    z-index: -6;
+    background-size: contain;
+    background-position-y: -3px;
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+  }
+  
+  .snake-right-angle {
+    background-image: url(./../assets/images/snake-right-angle.png);
+    background-repeat: no-repeat;
+    z-index: -6;
+    background-size: cover;
+    background-position-x: 1px;
+    background-position-y: 2px;
+  }
+  
+  .snake-right-end {
+    background-image: url(./../assets/images/snake-right-end.png);
+    z-index: -6;
+    background-size: contain;
+    background-position-y: 5px;
+    background-repeat: no-repeat;
+  }
+  /* Snake CSS end  Here */
+  

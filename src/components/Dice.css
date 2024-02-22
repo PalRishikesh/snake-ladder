@@ -1,0 +1,47 @@
+/* dice */
+.dice {
+    border: 2px solid wheat;
+    cursor: pointer;
+    padding: 5px;
+    position: absolute;
+    right: 13px;
+    top: 9px;
+    background-color: rgb(228, 15, 15, 0.8);
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    z-index: 9;
+  }
+  #dice {
+    margin-left: 50px;
+  }
+
+  
+.dice-rolling {
+    text-align: center;
+    font-size: 67px;
+  }
+  .dice_1::after {
+    content: "";
+    content: "\2680";
+  }
+  .dice_2::after {
+    content: "";
+    content: "\2681";
+  }
+  .dice_3::after {
+    content: "";
+    content: "\2682";
+  }
+  .dice_4::after {
+    content: "";
+    content: "\2683";
+  }
+  .dice_5::after {
+    content: "";
+    content: "\2684";
+  }
+  .dice_6::after {
+    content: "";
+    content: "\2685";
+  }
