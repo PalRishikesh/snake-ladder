@@ -137,14 +137,14 @@
   background-size: contain;
 }
 .tile.x46 {
-  background-image: url(/snake-ladder/src/assets/images/ladder-end.png);
+  background-image: url(./../snake-ladder/src/assets/images/ladder-end.png);
   background-repeat: no-repeat;
   z-index: -6;
   background-size: contain;
   background-position-y: 100%;
 }
 .tile.x42,.tile.x72,.tile.x98 {
-  background-image: url(/snake-ladder/src/assets/images/ladder-left-end.png);
+  background-image: url(./../snake-ladder/src/assets/images/ladder-left-end.png);
   z-index: -6;
   background-size: contain;
   background-position-y: 0px;
@@ -152,7 +152,7 @@
   background-position-x: 98%;
 }
 .tile.x43,.tile.x71,.tile.x97 {
-  background-image: url(/snake-ladder/src/assets/images/ladder-right-end.png);
+  background-image: url(./../snake-ladder/src/assets/images/ladder-right-end.png);
   z-index: -6;
   background-size: contain;
   background-repeat: no-repeat;
@@ -161,14 +161,14 @@
 /* Dynamic adding snake */
 
 .tile.x9,.tile.x40,.tile.x75 {
-  background-image: url(/snake-ladder/src/assets/images/snake-tail.png);
+  background-image: url(./../snake-ladder/src/assets/images/snake-tail.png);
   background-repeat: no-repeat;
   z-index: -6;
   background-size: contain;
 }
 
 .tile.x12,.tile.x29,.tile.x32,.tile.x41,.tile.x60,.tile.x86 {
-  background-image: url(/snake-ladder/src/assets/images/snake-middle.png);
+  background-image: url(./../snake-ladder/src/assets/images/snake-middle.png);
   z-index: -6;
   background-size: contain;
   background-repeat: no-repeat;
@@ -176,7 +176,7 @@
 /* .snake-left-anlge */
 
 .tile.x49,.tile.x95 {
-  background-image: url(/snake-ladder/src/assets/images/snake-left-angle.png);
+  background-image: url(./../snake-ladder/src/assets/images/snake-left-angle.png);
   background-repeat: no-repeat;
   z-index: -6;
   background-size: contain;
@@ -184,7 +184,7 @@
 }
 /* .snake-right-angle */
 .tile.x61 {
-  background-image: url(/snake-ladder/src/assets/images/snake-right-angle.png);
+  background-image: url(./../snake-ladder/src/assets/images/snake-right-angle.png);
   background-repeat: no-repeat;
   z-index: -6;
   background-size: cover;
@@ -193,7 +193,7 @@
 }
 /* .snake-right-end */
 .tile.x62 {
-  background-image: url(/snake-ladder/src/assets/images/snake-right-end.png);
+  background-image: url(./../snake-ladder/src/assets/images/snake-right-end.png);
   z-index: -6;
   background-size: contain;
   background-position-y: 5px;
@@ -203,7 +203,7 @@
 /* .snake-left-end  */
 
 .tile.x48,.tile.x96 {
-  background-image: url(/snake-ladder/src/assets/images/snake-left-end.png);
+  background-image: url(./../snake-ladder/src/assets/images/snake-left-end.png);
   z-index: -6;
   background-size: contain;
   background-position-y: -3px;

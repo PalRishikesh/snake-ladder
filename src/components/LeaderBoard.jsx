@@ -69,23 +69,27 @@ const LeaderBoard = () => {
   const userWon = ()=>{
     let userWonCount = localStorage.getItem("userWonCount")
     console.log("userWon: ",userWonCount);
-    if(userWonCount != null || userWonCount != undefined){
-      userWonCount++;
-      setUserWonCount(userWonCount);
+    if(userWonCount == null || userWonCount == undefined){
+      userWonCount = 1;
     }
-    // else{
-    //   userWonCount++;
-    // }
+    else{
+      userWonCount++;
+    }
+    setUserWonCount(userWonCount);
+
     localStorage.setItem("userWonCount",userWonCount);
   }
   
   const systemWon = ()=>{
     let systemWonCount = localStorage.getItem("systemWonCount")
     console.log("userWon C: ",systemWonCount);
-    if(systemWonCount != null || systemWonCount != undefined){
-      systemWonCount++;
-      setSystemWonCount(systemWonCount);
+    if(systemWonCount == null || systemWonCount == undefined){
+      systemWonCount = 1;
     }
+    else{
+      systemWonCount++;
+    }
+    setSystemWonCount(systemWonCount);
 
     localStorage.setItem("systemWonCount",systemWonCount);
   }
