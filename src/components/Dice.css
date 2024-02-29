@@ -12,14 +12,25 @@
     border-radius: 50%;
     z-index: 9;
   }
+
   #dice {
-    margin-left: 50px;
+    background-color: green;
+    color: white;
+    margin: 2px 0px;
+    border: 1px solid #37f298;
+    padding: 2px;
+    cursor: pointer;
   }
 
-  
-.dice-rolling {
-    font-size: 67px;
-  }
+.dice-inner-box{
+  margin-top: -20px;
+}
+
+.dice-rolling{
+  font-size: 50px;
+}
+
+
   .dice_1::after {
     content: "";
     content: "\2680";

@@ -5,9 +5,10 @@ console.log("generatedRandomNumber: ",randomNumber);
 
 var btnClassName = `dice_${randomNumber}`
   return (
-    <div className="dice-rolling" >
-      <span className={btnClassName}></span>
-    </div>
+    // <div className="dice-rolling" >
+      <div className="dice-inner-box">
+      <span className={"dice-rolling "+ btnClassName}></span>
+   </div>
   );
 };
 

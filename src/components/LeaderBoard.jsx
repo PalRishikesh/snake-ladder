@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 import Dice from "./Dice";
 import DiceClick from "./DiceClick";
 import "./LeaderBoard.css";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import UserCountImg from "./../assets/images/user-30.png";
+import SystemCountImg from "./../assets/images/system-30.png";
 // Leaderboard matrix
 
 const rows = [
@@ -35,67 +36,64 @@ const snakes = {
   48: 9,
 };
 
-
-const successToast=(message = false)=>{
+const successToast = (message = false) => {
   let successMessageContent = "Success operation";
-  if(message) successMessageContent = message
+  if (message) successMessageContent = message;
   toast.success(successMessageContent);
-}
+};
 
-const failToast = (message = false)=>{
+const failToast = (message = false) => {
   let failMessageContent = "Something went wrong...";
-  if(message) failMessageContent = message
+  if (message) failMessageContent = message;
   toast.warn(failMessageContent);
-}
-
+};
 
 const LeaderBoard = () => {
-
-
   const [randomNumber, setRandomNumber] = useState(1);
   const [userRandomNumber, setUserRandomNumber] = useState(1);
   const [systemRandomNumber, setSystemRandomNumber] = useState(1);
   const [userDiceRoll, setUserDiceRoll] = useState(false);
   const [systemDiceRoll, systemUserDiceRoll] = useState(false);
   const [isUserClick, setIsUserClick] = useState(false);
-  const [userWonCount, setUserWonCount] = useState(localStorage.getItem("userWonCount"))
-  const [systemWonCount, setSystemWonCount] = useState(localStorage.getItem("systemWonCount"))
+  const [userWonCount, setUserWonCount] = useState(
+    localStorage.getItem("userWonCount")
+  );
+  const [systemWonCount, setSystemWonCount] = useState(
+    localStorage.getItem("systemWonCount")
+  );
   // const [rows, setRows] = useState([Array(),Array([11,12])])
-  const resetGame=()=>{
+  const resetGame = () => {
     setRandomNumber(1);
     setUserRandomNumber(1);
     setSystemRandomNumber(1);
-  }
-  const userWon = ()=>{
-    let userWonCount = localStorage.getItem("userWonCount")
-    console.log("userWon: ",userWonCount);
-    if(userWonCount == null || userWonCount == undefined){
+  };
+  const userWon = () => {
+    let userWonCount = localStorage.getItem("userWonCount");
+    console.log("userWon: ", userWonCount);
+    if (userWonCount == null || userWonCount == undefined) {
       userWonCount = 1;
-    }
-    else{
+    } else {
       userWonCount++;
     }
     setUserWonCount(userWonCount);
 
-    localStorage.setItem("userWonCount",userWonCount);
-  }
-  
-  const systemWon = ()=>{
-    let systemWonCount = localStorage.getItem("systemWonCount")
-    console.log("userWon C: ",systemWonCount);
-    if(systemWonCount == null || systemWonCount == undefined){
+    localStorage.setItem("userWonCount", userWonCount);
+  };
+
+  const systemWon = () => {
+    let systemWonCount = localStorage.getItem("systemWonCount");
+    console.log("userWon C: ", systemWonCount);
+    if (systemWonCount == null || systemWonCount == undefined) {
       systemWonCount = 1;
-    }
-    else{
+    } else {
       systemWonCount++;
     }
     setSystemWonCount(systemWonCount);
 
-    localStorage.setItem("systemWonCount",systemWonCount);
-  }
-  
+    localStorage.setItem("systemWonCount", systemWonCount);
+  };
+
   const onDiceRollEvent = (system = false) => {
-    
     const diceRandomNumber = Math.floor(Math.random() * 6) + 1;
     setRandomNumber(diceRandomNumber);
 
@@ -104,12 +102,11 @@ const LeaderBoard = () => {
       const totalRandomNumber = systemRandomNumber + diceRandomNumber;
       if (totalRandomNumber <= 100) {
         setSystemRandomNumber(totalRandomNumber);
-      }
-      else{
+      } else {
         setUserDiceRoll(false);
       }
-      if(totalRandomNumber == 100){
-        failToast("System have won this Game.")
+      if (totalRandomNumber == 100) {
+        failToast("System have won this Game.");
         systemWon();
         resetGame();
       }
@@ -119,8 +116,8 @@ const LeaderBoard = () => {
       if (totalRandomNumber <= 100) {
         setUserRandomNumber(totalRandomNumber);
       }
-      if(totalRandomNumber == 100){
-        successToast("You have won this Game.")
+      if (totalRandomNumber == 100) {
+        successToast("You have won this Game.");
         userWon();
         resetGame();
       }
@@ -154,7 +151,6 @@ const LeaderBoard = () => {
     } else {
       // If ladder taken place
       if (ladders[updatedUserRandomNumber]) {
-        
         setUserRandomNumber(ladders[updatedUserRandomNumber]);
         console.log("updated value with : ", ladders[updatedUserRandomNumber]);
         successToast("Woo, you got ladder");
@@ -171,15 +167,13 @@ const LeaderBoard = () => {
     }
   };
   const allCalculation = (system = false) => {
-
     if (system == false && userRandomNumber > 1) {
       if (randomNumber !== 6) {
         setUserDiceRoll(true);
         setTimeout(() => {
           onDiceRollEvent(true);
         }, 1000);
-      }
-      else{
+      } else {
         successToast("Woo, you got 6, Play again");
       }
       // else{
@@ -197,7 +191,6 @@ const LeaderBoard = () => {
       }
     }
     calculateExtraPoint(system);
-
   };
   useEffect(() => {
     // setTimeout(() => {
@@ -208,7 +201,6 @@ const LeaderBoard = () => {
 
   return (
     <>
-      
       {rows.map((row, index) => (
         <div key={index} className="tile-row">
           {row.map((singleColumns) => {
@@ -249,8 +241,25 @@ const LeaderBoard = () => {
             </div>
             </>
         )) */}
-      <DiceClick childHanlderEvent={onDiceRollEvent} disabled={userDiceRoll} />
-      <Dice randomNumber={randomNumber} />
+      <div className="dice-outer">
+        <div >
+        <DiceClick
+          childHanlderEvent={onDiceRollEvent}
+          disabled={userDiceRoll}
+        />
+        </div>
+        <Dice randomNumber={randomNumber} />
+      </div>
+
+      <div className="dice-outer">
+        <div>
+          <img src={UserCountImg} width={14}  /> <span id="userWonCount"> {userWonCount} </span>
+        </div>
+        &nbsp;&nbsp;
+        <div>
+          <img src={SystemCountImg} width={14} /> <span id="systemWonCount">{systemWonCount}</span>
+        </div>
+      </div>
 
       <ToastContainer
         position="top-right"
@@ -263,12 +272,8 @@ const LeaderBoard = () => {
         draggable
         pauseOnHover
         theme="light"
-        transition:Slide />
-    <div>
-      <div>User Won <span id="userWonCount"> { userWonCount} </span></div>
-      <div>System Won <span id="systemWonCount">{systemWonCount}</span></div>
-    </div>
-
+        transition:Slide
+      />
     </>
   );
 };
