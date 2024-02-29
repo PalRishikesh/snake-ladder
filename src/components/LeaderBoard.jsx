@@ -53,7 +53,6 @@ const LeaderBoard = () => {
   const [userRandomNumber, setUserRandomNumber] = useState(1);
   const [systemRandomNumber, setSystemRandomNumber] = useState(1);
   const [userDiceRoll, setUserDiceRoll] = useState(false);
-  const [systemDiceRoll, systemUserDiceRoll] = useState(false);
   const [isUserClick, setIsUserClick] = useState(false);
   const [userWonCount, setUserWonCount] = useState(
     localStorage.getItem("userWonCount")
@@ -69,14 +68,12 @@ const LeaderBoard = () => {
   };
   const userWon = () => {
     let userWonCount = localStorage.getItem("userWonCount");
-    console.log("userWon: ", userWonCount);
     if (userWonCount == null || userWonCount == undefined) {
       userWonCount = 1;
     } else {
       userWonCount++;
     }
     setUserWonCount(userWonCount);
-
     localStorage.setItem("userWonCount", userWonCount);
   };
 
