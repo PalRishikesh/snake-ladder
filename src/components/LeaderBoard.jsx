@@ -246,16 +246,17 @@ const LeaderBoard = () => {
         />
         </div>
         <Dice randomNumber={randomNumber} />
-      </div>
-
-      <div className="dice-outer">
         <div>
-          <img src={UserCountImg} width={14}  /> <span id="userWonCount"> {userWonCount} </span>
+          <img src={UserCountImg}   /> <span id="userWonCount"> {userWonCount} </span>
         </div>
         &nbsp;&nbsp;
         <div>
-          <img src={SystemCountImg} width={14} /> <span id="systemWonCount">{systemWonCount}</span>
+          <img src={SystemCountImg}  /> <span id="systemWonCount">{systemWonCount}</span>
         </div>
+      </div>
+
+      <div className="dice-outer">
+      
       </div>
 
       <ToastContainer

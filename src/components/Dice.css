@@ -16,10 +16,11 @@
   #dice {
     background-color: green;
     color: white;
-    margin: 2px 0px;
     border: 1px solid #37f298;
-    padding: 2px;
+    padding: 4px;
     cursor: pointer;
+    font-size: 18px;
+    margin: 3px 0px;
   }
 
 .dice-inner-box{
@@ -27,7 +28,7 @@
 }
 
 .dice-rolling{
-  font-size: 50px;
+  font-size: 52px;
 }
 
 
