@@ -42,6 +42,15 @@ button:disabled, button[disabled] {
   cursor: none !important;
 }
   
+span.info-dice {
+  position: relative;
+    left: 0;
+    right: 0;
+    padding: 0;
+    top: 0;
+    cursor: none;
+    margin-right: 5px;
+}
 /* Ladder CSS start Here */
 .ladder-start {
     background-image: url(./../assets/images/ladder-start.png);

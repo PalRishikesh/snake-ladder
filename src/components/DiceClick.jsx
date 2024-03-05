@@ -4,7 +4,7 @@ const DiceClick = (props) => {
         props.childHanlderEvent();
     }
   return (
-    <button id="dice" onClick={rollDice} disabled={props.disabled}>Roll Dice</button>
+    <button id="dice" onClick={rollDice} disabled={props.disabled} width={1000} >{props.disabled ? 'System is Rolling Dice':'Your chance Roll Dice'} </button>
   )
 }
 

@@ -56,9 +56,13 @@ const LeaderBoard = () => {
   const [isUserClick, setIsUserClick] = useState(false);
   const [userWonCount, setUserWonCount] = useState(
     localStorage.getItem("userWonCount")
+      ? localStorage.getItem("userWonCount")
+      : 0
   );
   const [systemWonCount, setSystemWonCount] = useState(
     localStorage.getItem("systemWonCount")
+      ? localStorage.getItem("systemWonCount")
+      : 0
   );
   // const [rows, setRows] = useState([Array(),Array([11,12])])
   const resetGame = () => {
@@ -121,8 +125,6 @@ const LeaderBoard = () => {
     }
   };
 
-  // useE
-
   // CalculateLeaderAndSnake
   const calculateExtraPoint = (system = false) => {
     const updatedUserRandomNumber = userRandomNumber;
@@ -173,13 +175,8 @@ const LeaderBoard = () => {
       } else {
         successToast("Woo, you got 6, Play again");
       }
-      // else{
-      //   setUserDiceRoll(false);
-      // }
     } else {
       if (randomNumber === 6) {
-        // setUserDiceRoll(true);
-        // successToast("System got 6");
         setTimeout(() => {
           onDiceRollEvent(true);
         }, 1000);
@@ -190,10 +187,7 @@ const LeaderBoard = () => {
     calculateExtraPoint(system);
   };
   useEffect(() => {
-    // setTimeout(() => {
     allCalculation(!isUserClick);
-    // console.log("use effect : ", isUserClick);
-    // }, 1000);
   }, [randomNumber, userRandomNumber, systemRandomNumber]);
 
   return (
@@ -228,35 +222,32 @@ const LeaderBoard = () => {
         </div>
       ))}
 
-      {/* rows.map((row)=>(
-            <>
-
-            <div key={row} className="tile">{row}
-             {
-                (row === userRandomNumber) ? <span className="dice"></span>:''
-             }
-            </div>
-            </>
-        )) */}
       <div className="dice-outer">
-        <div >
-        <DiceClick
-          childHanlderEvent={onDiceRollEvent}
-          disabled={userDiceRoll}
-        />
+        <div>
+          <DiceClick
+            childHanlderEvent={onDiceRollEvent}
+            disabled={userDiceRoll}
+          />
         </div>
         <Dice randomNumber={randomNumber} />
         <div>
-          <img src={UserCountImg}   /> <span id="userWonCount"> {userWonCount} </span>
+          <img src={UserCountImg} />{" "}
+          <span id="userWonCount"> {userWonCount} </span>
         </div>
         &nbsp;&nbsp;
         <div>
-          <img src={SystemCountImg}  /> <span id="systemWonCount">{systemWonCount}</span>
+          <img src={SystemCountImg} />{" "}
+          <span id="systemWonCount">{systemWonCount}</span>
         </div>
       </div>
 
       <div className="dice-outer">
-      
+          <span className="dice info-dice"></span> User Coin
+      </div>
+
+
+      <div className="dice-outer">
+            <span className="dice-system info-dice"></span> System Coin
       </div>
 
       <ToastContainer
