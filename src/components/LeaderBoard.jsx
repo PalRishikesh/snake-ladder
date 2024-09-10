@@ -188,13 +188,22 @@ const LeaderBoard = () => {
   };
   useEffect(() => {
     allCalculation(!isUserClick);
+    rows.map((row, index) =>{
+    // row.map((singleRow, index) =>{
+    console.log("singleRow: ",row[0]);
+
+    // })
+
+    })
+    
   }, [randomNumber, userRandomNumber, systemRandomNumber]);
 
   return (
     <>
       {rows.map((row, index) => (
-        <div key={index} className="tile-row">
-          {row.map((singleColumns) => {
+        <div key={JSON.stringify(row)} className="tile-row">
+          
+          {row.map((singleColumns,index) => {
             return (
               <>
                 <div
@@ -219,9 +228,11 @@ const LeaderBoard = () => {
               </>
             );
           })}
+
         </div>
       ))}
 
+<div className="bottom-control">
       <div className="dice-outer">
         <div>
           <DiceClick
@@ -240,7 +251,7 @@ const LeaderBoard = () => {
           <span id="systemWonCount">{systemWonCount}</span>
         </div>
       </div>
-
+      
       <div className="dice-outer">
           <span className="dice info-dice"></span> User Coin
       </div>
@@ -248,6 +259,7 @@ const LeaderBoard = () => {
 
       <div className="dice-outer">
             <span className="dice-system info-dice"></span> System Coin
+      </div>
       </div>
 
       <ToastContainer

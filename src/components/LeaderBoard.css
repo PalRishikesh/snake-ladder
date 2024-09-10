@@ -1,5 +1,5 @@
 .tile-row {
-    display: flex;
+    /* display: flex; */
   }
   .tile {
     border: 1px solid green;
@@ -227,4 +227,20 @@ span.info-dice {
   background-position-y: -3px;
   background-repeat: no-repeat;
   background-position-x: 100%;
+}
+
+.bottom-control{
+  display: inline-grid;
+    margin-top: 20px;
+    padding: 5px;
+    border: 2px solid #0ff9ec;
+    border-radius: 5px;
+    box-shadow: #c3adad -2px 3px 2px 1px;
+}
+
+@media only screen and (max-device-width: 480px) {
+  /* styles for mobile browsers smaller than 480px; (iPhone) */
+  .tile-row {
+    display: flex;
+  }
 }
